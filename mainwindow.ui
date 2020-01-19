@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>691</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>dpkg v1.0.0 - Packages Manager</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="mainLayout">
+      <item>
+       <widget class="QLabel" name="lblPackageName">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>19</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>false</underline>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="text">
+         <string>No package opened</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="boxFiles">
+        <property name="title">
+         <string>Files list</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QListWidget" name="listFiles"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="butModifyList">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>&amp;Modify</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="boxScript">
+      <property name="title">
+       <string>Scripts</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="TabWidget" name="tabWidget">
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="tabsClosable">
+          <bool>true</bool>
+         </property>
+         <property name="movable">
+          <bool>false</bool>
+         </property>
+         <widget class="QWidget" name="tabNewScript">
+          <attribute name="title">
+           <string>New</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="butScriptsLayout">
+         <item>
+          <widget class="QPushButton" name="butOpenScript">
+           <property name="text">
+            <string>&amp;Open</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="butSaveScript">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>&amp;Save</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="butSaveAsScript">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Save &amp;as ...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>691</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;Package</string>
+    </property>
+    <addaction name="action_New"/>
+    <addaction name="action_Open"/>
+    <addaction name="action_Save"/>
+    <addaction name="actionS_ave_as"/>
+    <addaction name="separator"/>
+    <addaction name="action_About"/>
+    <addaction name="actionE_xit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Select">
+    <property name="title">
+     <string>&amp;Select</string>
+    </property>
+    <addaction name="action_Root_directory"/>
+    <addaction name="action_Workspace"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Select"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_Open">
+   <property name="text">
+    <string>&amp;Open ...</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionS_ave_as">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>S&amp;ave as ...</string>
+   </property>
+  </action>
+  <action name="actionE_xit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="action_Root_directory">
+   <property name="text">
+    <string>H&amp;ost root ...</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_New">
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+  </action>
+  <action name="action_Workspace">
+   <property name="text">
+    <string>&amp;Workspace ...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>tabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
